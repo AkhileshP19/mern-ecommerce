@@ -17,7 +17,7 @@ import CheckAuth from './components/common/check-auth'
 import Unauthpage from './pages/unauth-page'
 
 function App() {
-  const isAuthenticated = true;
+  const isAuthenticated = false;
   const user = {
     name: 'Akhilesh',
     role: 'admin'

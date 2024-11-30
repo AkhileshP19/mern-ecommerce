@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cookieParser = require('cookie-parser');
 const cors = require('cors');
+const authRouter = require('./routes/auth/auth-routes')
 
 // create a DB connection  
 mongoose.connect('mongodb+srv://akhileshpatil69:Akhi%402001@cluster0.gbwju.mongodb.net/')
@@ -29,5 +30,6 @@ app.use(
 
 app.use(cookieParser);
 app.use(express.json());
+app.use('/api/auth', authRouter);  // when we'll go to /api/auth/register -> then use the registerUser controller
 
 app.listen(PORT, () => console.log(`listening to requests on PORT ${PORT}`))
